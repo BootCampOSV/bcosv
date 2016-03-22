@@ -10,7 +10,7 @@ et de son usage possible dans le contexte local
 
 + Disposer d'une base de départ pour aller plus loin (AAP) dans une phase ultérieure.
 
-+ Have fun ou en traduction littérale Finistérienne : Avoir du plijadur
++ "Kaout plijadur Assembles" / "Passer un moment sympa ensemble" / "Have fun together" / 
 
 ## Règles du jeu 
 
@@ -22,4 +22,4 @@ et de son usage possible dans le contexte local
 
 + Règle 4 : Chaque projet  dispose d'un répertoire sous github (Idéalement chaque équipe dispose d'un participant familier de l'utilisation de git, et se charge d'uploader le contenu digital produit (photos de tableaux, croquis, url , code ,....) 
 
-+ Règle 5 : Chaque équipe projet organise son espace propre selon, ses propres règles définie collaborativement par les membres de l'équipe 
++ Règle 5 : Chaque équipe projet organise son répertoire propre selon, ses propres règles, définies collaborativement par les membres de l'équipe.  
