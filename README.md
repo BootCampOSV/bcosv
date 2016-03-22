@@ -6,7 +6,7 @@ Dépot des projets du Boot camp OSV du 27 au 29 Avril 2016.
 ## Objectifs
 
 + Capitaliser un maximum d'idées, de contenus, d'outils, de projets, ...., autour de la plateforme Open Source Vehicle
-et de son usage possible dans le contexte locali Rennais.
+et de son usage possible dans le contexte local Rennais.
 
 + Disposer d'une base de départ pour aller plus loin (AAP) dans une phase ultérieure.
 
