@@ -10,7 +10,7 @@ et de son usage possible dans le contexte local Rennais.
 
 + Disposer d'une base de départ pour aller plus loin (AAP) dans une phase ultérieure.
 
-+ "Kaout plijadur Assembles" / "Passer un moment sympa ensemble" / "Have fun together" / 
++ "Have fun together" 
 
 ## Règles du jeu 
 
