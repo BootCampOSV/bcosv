@@ -1,12 +1,15 @@
-# Nom du Projet 
+# Documentation de la plateforme OSV  
 
++ Choix de la plateforme de partage. (Wiki, github ? ) 
 
-# Objectifs du projet 
++ Mettre en place un outil  documenatire de description détaillée de la plateforme OSV 
 
++ Organisation des données
 
-# Descriptif du projet 
+    + Modèle hiérarchique
+    + Permettre une visualisation à un niveau hiérarchique arbitraire ( du plus haut niveau jusqu'à la pièce élémentaire)
+    + Prise en compte des doublons
+    + Introduire la distinction entre les éléments modifiables et non modifiables
 
-
-# Participants au projet
 
 
