@@ -12,4 +12,12 @@
     + Introduire la distinction entre les éléments modifiables et non modifiables
 
 
++ S'inspirer de RepRap 
 
++ Le chassis en l'état n'autorise pas l'homologation du véhicule
+
++ Introduire l'objectif en terme d'homologation
+
++ Décrire le chassis prioritairement 
+
++ Introduire la documentation 
