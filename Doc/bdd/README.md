@@ -1,6 +1,6 @@
 # Base de données
 
-L'idée est de décrire l'assemblage des pièces du véhicule sous la forme d'un graphe où chaque noeud du graphe représente une pièce ou un assemblage de pièces. Une base de donnée permet de construire ce graph.
+Une façon de décrire l'assemblage des pièces que forme le véhicule est d'utiliser un graphe où chaque noeud représente une pièce ou un assemblage de pièces. Une base de donnée permet de construire ce graph.
 
 ## Structure de la base de donnée
 
@@ -52,4 +52,5 @@ De nombreuses méthodes de traitement de la base doivent être concidérées, pa
 + la création, la modification d'un élément ;
 + l'affichage de l'arbre de construction d'un véhicule ;
 + le chiffrage d'un véhicule ;
-+ ...
++ proposer un configurateur de véhicule en ligne ;
++ etc.
