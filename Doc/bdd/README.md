@@ -27,7 +27,7 @@ Cette table permet d'associer deux éléments en établissant une relation d'hé
 
 ### la table **propriete** :
 
-Pour décrire un élément du véhicule, il est nécessaire de lui attribuer des propriétes (une couleur, un matériau, un plan de montage, un modèle CAO). Cette table contient ces propriétés.
+Pour décrire un élément du véhicule, il est nécessaire de lui attribuer des propriétes (une couleur, un matériau, un plan de montage, un modèle CAO, un prix, un fournisseur, etc.). Cette table contient ces propriétés.
 
 | nom | type |
 | --- | ---- |
@@ -47,3 +47,9 @@ Cette table permet d'associer à un élément une propriété.
 
 
 ## Méthodes d'accès à la base de donnée
+
+De nombreuses méthodes de traitement de la base doivent être concidérées, par exemple :
++ la création, la modification d'un élément ;
++ l'affichage de l'arbre de construction d'un véhicule ;
++ le chiffrage d'un véhicule ;
++ ...
