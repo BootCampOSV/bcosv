@@ -17,7 +17,7 @@ Chaque objet de cette table décrit un élément (matériel ou non) de la voitur
 
 ### la table **heritage** :
 
-Cette table permet d'associer deux éléments en établissant une relation d'héritage entre eux. Par exemple, l'élément *train avant* appartient à l'élément *chassis*. Ainsi un élément permet de désigner un assemblage complexe ou une simple vis.
+Cette table permet d'associer deux éléments en établissant une relation d'héritage entre eux. Par exemple, l'élément *train avant* appartient à l'élément *chassis*. Ainsi un élément permet de désigner un assemblage complexe ou une simple vis et d'orienter le graph.
 
 | nom | type |
 | --- | ---- |
