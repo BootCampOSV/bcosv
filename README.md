@@ -1,5 +1,6 @@
-# bcosv
-Dépot des projets du Boot camp OSV du 27 au 29 Avril 2016. 
+# Description 
+
+This repository has been created during the Boot camp OSV from April 27 to 29  2016. 
 
 
 
