@@ -26,5 +26,8 @@ et de son usage possible dans le contexte local Rennais.
 + Règle 5 : Chaque équipe projet organise son répertoire propre selon, ses propres règles, définies collaborativement par les membres de l'équipe. 
 
 
+## Liens Utiles
 
-https://annuel.framapad.org/p/osv-rennes
+[Le Pad du Projet OSV (Trait d'union entre toutes les initiatives en cours ) ](https://annuel.framapad.org/p/osv-rennes)
+
+[Description du Véhicule](http://bootcamposv.github.io/bcosv/)
