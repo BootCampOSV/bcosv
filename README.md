@@ -24,3 +24,7 @@ et de son usage possible dans le contexte local Rennais.
 + Règle 4 : Chaque projet  dispose d'un répertoire sous de dépôt github (idéalement chaque équipe dispose d'un participant familier de l'utilisation de git, et se charge d'uploader le contenu digital produit (photos de tableaux, croquis, url , code ,....).
 
 + Règle 5 : Chaque équipe projet organise son répertoire propre selon, ses propres règles, définies collaborativement par les membres de l'équipe. 
+
+
+
+https://annuel.framapad.org/p/osv-rennes
