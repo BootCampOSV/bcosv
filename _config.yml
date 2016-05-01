@@ -1,3 +1,4 @@
 name: Boot Camp OSV
 markdown: kramdown
 permalink: /blog/:year/:month/:day/:title
+baseurl: /bcosv
