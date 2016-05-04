@@ -26,7 +26,7 @@ for li in lis:
         l =5
 
     name = ch1[1].split(',')[0].replace('"','').replace('\'','')
-    G.add_node(name)
+    G.add_node(name,l=l)
     if l!=lprev:
         d[l]=name
     if l>0:
@@ -39,3 +39,6 @@ pos=graphviz_layout(G,prog='twopi',args='')
 fig = plt.figure(figsize=(20,20))
 nx.draw(G,pos,node_size=20,alpha=0.5,node_color='blue',with_labels=True,fig=fig)
 plt.savefig('tabbyGraph.png')
+for n in G.nodes_iter():
+    if G.node[n]['l']==1:
+        print n
