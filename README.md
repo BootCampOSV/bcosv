@@ -36,8 +36,6 @@ et de son usage possible dans le contexte local Rennais.
 
 # Projet (OPEP ;) )  OSV Parts Editing Project  
 
-## 24 Mai 2016.
-
 ### Localisation des fichiers STEP
 
 Les fichiers STEP sont déposés  à cette adresse  :
