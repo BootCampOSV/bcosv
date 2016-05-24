@@ -130,7 +130,5 @@ Tant que le nouveau fichier ma_jolie_piece.stp fichier n'est pas éditable sous 
 
 
 
-Je préconise dans un premier temps de nommer les blocs avec leur nom original.
-
-Ensuite on renommera intelligemment les fichiers, rendu à ce stade il faudra cervoragiser sur ce point avec des hommes et des femmes de l'Art...
+Dans un premier temps il est préférable de nommer les blocs avec leur nom original.
 
