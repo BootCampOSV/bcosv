@@ -35,7 +35,7 @@ et de son usage possible dans le contexte local Rennais.
 
 L'un des résultats du boot camp OSV est l'amorçage du sous-projet OPEP, décrit ci-dessous.
  
-# OSV Parts Editing Project  
+# (OPEP project) OSV Parts Editing Project  
 
 ### Localisation des fichiers STEP
 
