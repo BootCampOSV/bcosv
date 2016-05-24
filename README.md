@@ -56,7 +56,7 @@ Il est éditable avec [freecad](http://www.freecadweb.org/).
 
 ## Comment participer à l'OPEP ?
 
-1. Sous Windows installer git pour windows
+1. Sous Windows installer [git pour windows](https://git-for-windows.github.io/)
     Sous linux : sudo apt-get install git
 2. Se créer un compte github
 3. Forker le répertoire bcosv sur son compte github 
