@@ -40,7 +40,7 @@ et de son usage possible dans le contexte local Rennais.
 
 Les fichiers STEP sont déposés  à cette adresse  :
 
-    https://github.com/BootCampOSV/bcosv/tree/master/Doc/mechanics/stp
+    [Fichiers STEP](https://github.com/BootCampOSV/bcosv/tree/master/Doc/mechanics/stp)
 
 Les fichiers STEP (extension .stp)  sont des fichiers de type texte ( visualisable en ligne sauf quand ils sont trop gros )
 
@@ -48,24 +48,28 @@ Celui ci par exemple :
 
 [rear_frame.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp)
 
-est petit et visible en ligne, et il est éditable avec freecad. (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre )
+est petit et visible en ligne, et il est éditable avec freecad. (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre ). Il peut servir d'exemple pour créer tous les autres sur le même principe. 
 
 ![rear_frame in freecad](images/freecad1.png)_
 
-HoComment participer à l'OPEP ?
+## Comment participer à l'OPEP ?
 
-1) Sous Windows installer git pour windows
+1. Sous Windows installer git pour windows
     Sous linux : sudo apt-get install git
-2) Se créer un compte github
-3) Forker le répertoire bcosv sur sa machine
-
+2. Se créer un compte github
+3. Forker le répertoire bcosv sur son compte github 
+4. Cloner le répertoire 
     git clone https://github.com/BootCampOSV/bcosv.git
-
+5. Editer `ma_nouvelle_piece.stp`
+6. Quand elle est terminée 
+    - git add ma_nouvelle piece.stp 
+    - git commit -a - m "Ajout de ma_nouvelle_piece.stp bla bla"
+    - git push origin master 
+7. Sur son compte github faire un pull request pour demander l'intégration de sa pièce dans le projet
 
 
 ### Structure d'un fichier
 
-Le fichier ci dessus peut servir d'exemple pour en créer d'autres sur le même principe.
 
 #### Entete
 
@@ -110,25 +114,26 @@ Tant que le nouveau fichier ma_jolie_piece.stp fichier n'est pas éditable sous 
 
        - https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/tabby2.stp
        Attention : ce n'est plus le fichier original du site OSV
-      
+
        - Le niveau hiérarchique d'un bloc des pièces est indiquée dans le fichier :
-     
-       [https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
-       
+
+        [ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
 
   + Si le fichier est éditable sous freecad:
 
-        - Bravo, une nouvelle pièce ou bloc qui pourra recevoir des nombreuse informations complémentaires est créée ! 
-        - Placer le fichier à sa place dans l'arborescence du véhicule et proposer un pull request  (une nouvelle contribution)
-            + Dans peu de temps, la nouvelle pièce sera convertie en html et visualisable sur le web ici
-                    http://bootcamposv.github.io/bcosv/Doc/mechanics/
-        - Sortir
+    - Bravo, une nouvelle pièce ou bloc qui pourra recevoir des nombreuse informations complémentaires est créée ! 
+    - Placer le fichier à sa place dans l'arborescence du véhicule et proposer un pull request  (une nouvelle contribution)
+        + Dans peu de temps, la nouvelle pièce sera convertie en html et visualisable sur le web ici
+                [mechanics](http://bootcamposv.github.io/bcosv/Doc/mechanics/)
+    - Sortir
 
   + Sinon:
         - Regarder ce qui cloche 
         - corriger le probleme (Dans 99% des cas c'est un lien manquant, chercher ce qui a été oublié dans le gros fichier STEP)
 
 
-Dans un premier temps il est préférable de nommer les blocs avec leur nom original.
+Dans un premier temps, il est préférable de nommer les blocs avec leur nom original.
 
+
+A plusieurs tout cela peut aller assez vite. :) 
 
