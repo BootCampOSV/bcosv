@@ -49,7 +49,7 @@ Celui ci par exemple :
 
 [rear_frame.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp)
 
-est petit et visible en ligne, et il est éditable avec freecad. (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre ). Il peut servir d'exemple pour créer tous les autres sur le même principe. 
+est petit et visible en ligne, et il est éditable avec [freecad](http://www.freecadweb.org/). (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre ). Il peut servir d'exemple pour créer tous les autres sur le même principe. 
 
 ![rear_frame in freecad](images/freecad1.png)_
 
@@ -62,7 +62,7 @@ est petit et visible en ligne, et il est éditable avec freecad. (Il a été ren
 4. Cloner le répertoire 
     git clone https://github.com/BootCampOSV/bcosv.git
 5. Editer `ma_nouvelle_piece.stp`
-6. Quand elle est terminée 
+6. Quand  le fichier est éditable sous [freecad](http://www.freecadweb.org/)
     - git add ma_nouvelle piece.stp 
     - git commit -a - m "Ajout de ma_nouvelle_piece.stp bla bla"
     - git push origin master 
