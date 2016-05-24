@@ -33,8 +33,8 @@ et de son usage possible dans le contexte local Rennais.
 [Description du Véhicule](http://bootcamposv.github.io/bcosv/)
 
 
-
-# Projet (OPEP ;) )  OSV Parts Editing Project  
+ 
+# OSV Parts Editing Project  
 
 ### Localisation des fichiers STEP
 
@@ -46,12 +46,12 @@ Les fichiers STEP (extension .stp)  sont des fichiers de type texte ( visualisab
 
 Celui ci par exemple :
 
-https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp
+[rear_frame.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp)
 
-est petit visible en ligne, et éditable avec freecad. (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre )
+est petit et visible en ligne, et il est éditable avec freecad. (Il a été renommé , c'est une mauvaise idée pour l'instant, exemple à ne pas suivre )
 
 
-Comment participer à l'OPEP ?
+HoComment participer à l'OPEP ?
 
 1) Sous Windows installer git pour windows
     Sous linux : sudo apt-get install git
