@@ -71,15 +71,11 @@ Il est éditable avec [freecad](http://www.freecadweb.org/).
 
 ## Travail à faire    
      
- + **Milestone 1** (Achieved 4%) : Tout le fichier STEP du chassis OSV est     
- -découpé en blocs élémentaires. Chaque bloc est renomenclaturé    
- -et organisés hiérarchiquement a tous les niveaux hiérarchiques    
- -du système. La structure de graphe du chassis est dégagée   
- -(liens d'appartenance à un bloc et liens fonctionnels entre blocs).        
- + **Milestone 2**(Achieved 0%): Les pièces du chassis réel non présentes dans le fichier STEP original sont détaillées et ajoutées .   
- - Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... )    
- + **Milestone 3**(Achieved 0%): Le chassis complet du véhicule est documenté dans toute ses parties y compris le système d'informations. A ce stade le véhicule OSV peut être reproduit.      
- + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, ajout de chassis, ajouts de capteurs , ....)     
+ + **Milestone 1** (Achieved 4%) : 
+  Tout le fichier STEP du chassis OSV est découpé en blocs élémentaires. Chaque bloc est renomenclaturé  et organisés hiérarchiquement à tous les niveaux hiérarchiques du système. La structure de graphe du chassis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).        
+ + **Milestone 2**(Achieved 0%): Les pièces du chassis réel non présentes dans le fichier STEP original sont détaillées et ajoutées . Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... )    
+ + **Milestone 3**(Achieved 0%): Le chassis complet du véhicule est documenté dans toute ses parties y compris le système d'informations, le chassis et la carosserie.
+ + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, autres chassis, ajouts de capteurs, systèmes d'aide à la perception et à l'autonomisation....)     
         
 # Let's start ...
 
