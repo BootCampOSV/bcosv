@@ -33,6 +33,7 @@ et de son usage possible dans le contexte local Rennais.
 [Description du Véhicule](http://bootcamposv.github.io/bcosv/)
 
 
+L'un des résultats du boot camp OSV est l'amorçage du sous-projet OPEP, décrit ci-dessous.
  
 # OSV Parts Editing Project  
 
@@ -137,3 +138,4 @@ Dans un premier temps, il est préférable de nommer les blocs avec leur nom ori
 
 A plusieurs tout cela peut aller assez vite. :) 
 
+Vous pouvez modifier et compléter cette documentation pour aider d'autres participants à nous aider. 
