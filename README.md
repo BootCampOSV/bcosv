@@ -68,8 +68,26 @@ est petit et visible en ligne, et il est éditable avec [freecad](http://www.fre
     - git push origin master 
 7. Sur son compte github faire un pull request pour demander l'intégration de sa pièce dans le projet
 
+## Travail à faire    
+ -    
+ -+ **Milestone 1** (Achieved 4%) : Tout le fichier STEP du chassis OSV est     
+ -découpé en blocs élémentaires. Chaque bloc est renomenclaturé    
+ -et organisés hiérarchiquement a tous les niveaux hiérarchiques    
+ -du système. La structure de graphe du chassis est dégagée   
+ -(liens d'appartenance à un bloc et liens fonctionnels entre blocs).     
+        
+ -+ **Milestone 2**(Achieved 0%): Les pièces du chassis réel non présentes dans le fichier STEP original sont détaillées et ajoutées .   
+ - Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... )    
+ -    
+ -+ **Milestone 3**(Achieved 0%): Le chassis complet du véhicule est documenté dans toute ses parties y compris le système d'informations. A ce stade le véhicule OSV peut être reproduit.     
+ -    
+ -+ **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, ajout de chassis, ajouts de capteurs , ....)     
+        
+ -Let's start ...
 
 ### Structure d'un fichier
+
+- Le fichier [rear_frame.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp) peut servir d'exemple pour créer tous les autres sur le même principe.
 
 
 #### Entete
@@ -87,18 +105,17 @@ L’entête est de la forme :
 	ENDSEC;
 	DATA;
 
-(Note 1 : à terme on pourrait y glisser aussi des infos sur sa license):
++ (Note 1 : à terme on pourrait y glisser aussi des infos sur sa license):
 
-(Note 2 : Après édition et réenregistrement sous freecad le fichier est beaucoup plus clean )
++ (Note 2 : Après édition et réenregistrement sous [freecad](http://www.freecadweb.org/) l'entete est un peu modifié. On peut ajjouter le nom de l'éditeur du fichier et la license du fichier. 
 
 
 #### Clôture du fichier
 
-La clôture du fichier
-
-ENDSEC;
-
-	END-ISO-10303-21;
+La clôture du fichier : 
+	
+  ENDSEC;
+  END-ISO-10303-21;
 
 
 #### Corps ( Ici  est décrit l'essentiel  du travail à faire)
@@ -107,9 +124,9 @@ Le corps du fichier se tient entre son entête et sa cloture.
  
 Algo pour enrichir la base avec un nouveau fichier stp
 
-Créer avec son éditeur de texte préféré le fichier : ma_jolie_piece.stp
+Créer avec son éditeur de texte préféré le fichier : ma_nouvelle_piece.stp
 
-Tant que le nouveau fichier ma_jolie_piece.stp fichier n'est pas éditable sous freecad :
+Tant que le nouveau fichier ma_nouvelle_piece.stp fichier n'est pas éditable sous freecad :
 
   + ajouter de nouveaux blocs de directives prélevées (avec réflexion type SUDOKU) dans
 
@@ -120,7 +137,7 @@ Tant que le nouveau fichier ma_jolie_piece.stp fichier n'est pas éditable sous 
 
         [ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
 
-  + Si le fichier est éditable sous freecad:
+  + Si le fichier est éditable sous [freecad](http://www.freecadweb.org/):
 
     - Bravo, une nouvelle pièce ou bloc qui pourra recevoir des nombreuse informations complémentaires est créée ! 
     - Placer le fichier à sa place dans l'arborescence du véhicule et proposer un pull request  (une nouvelle contribution)
@@ -138,4 +155,4 @@ Dans un premier temps, il est préférable de nommer les blocs avec leur nom ori
 
 A plusieurs tout cela peut aller assez vite. :) 
 
-Vous pouvez modifier et compléter cette documentation pour aider d'autres participants à nous aider. 
+Vous pouvez modifier, compléter et améliorer cette documentation pour aider d'autres participants à nous aider. 
