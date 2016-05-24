@@ -75,16 +75,13 @@ Il est éditable avec [freecad](http://www.freecadweb.org/).
  -découpé en blocs élémentaires. Chaque bloc est renomenclaturé    
  -et organisés hiérarchiquement a tous les niveaux hiérarchiques    
  -du système. La structure de graphe du chassis est dégagée   
- -(liens d'appartenance à un bloc et liens fonctionnels entre blocs).     
-        
+ -(liens d'appartenance à un bloc et liens fonctionnels entre blocs).        
  + **Milestone 2**(Achieved 0%): Les pièces du chassis réel non présentes dans le fichier STEP original sont détaillées et ajoutées .   
  - Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... )    
- -    
- + **Milestone 3**(Achieved 0%): Le chassis complet du véhicule est documenté dans toute ses parties y compris le système d'informations. A ce stade le véhicule OSV peut être reproduit.     
- -    
+ + **Milestone 3**(Achieved 0%): Le chassis complet du véhicule est documenté dans toute ses parties y compris le système d'informations. A ce stade le véhicule OSV peut être reproduit.      
  + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, ajout de chassis, ajouts de capteurs , ....)     
         
- -Let's start ...
+# Let's start ...
 
 ### Structure d'un fichier
 
@@ -115,8 +112,8 @@ L’entête est de la forme :
 
 La clôture du fichier : 
 	
-  ENDSEC;
-  END-ISO-10303-21;
+    ENDSEC;
+    END-ISO-10303-21;
 
 
 #### Corps ( Ici  est décrit l'essentiel  du travail à faire)
@@ -125,9 +122,9 @@ Le corps du fichier se tient entre son entête et sa cloture.
  
 Algo pour enrichir la base avec un nouveau fichier stp
 
-Créer avec son éditeur de texte préféré le fichier : ma_nouvelle_piece.stp
++ Créer avec son éditeur de texte préféré le fichier : ma_nouvelle_piece.stp
 
-Tant que le nouveau fichier ma_nouvelle_piece.stp fichier n'est pas éditable sous freecad :
++ Tant que le nouveau fichier ma_nouvelle_piece.stp fichier n'est pas éditable sous freecad :
 
   + ajouter de nouveaux blocs de directives prélevées (avec réflexion type SUDOKU) dans
 
@@ -147,13 +144,14 @@ Tant que le nouveau fichier ma_nouvelle_piece.stp fichier n'est pas éditable so
     - Sortir
 
   + Sinon:
-        - Regarder ce qui cloche 
-        - corriger le probleme (Dans 99% des cas c'est un lien manquant, chercher ce qui a été oublié dans le gros fichier STEP)
+      
+      - Regarder ce qui cloche 
+      - corriger le problème (Dans 99% des cas, c'est un lien manquant. Chercher ce qui a été oublié dans le gros fichier STEP)
 
 
-Dans un premier temps, il est préférable de nommer les blocs avec leur nom original.
+Dans un premier temps, il est préférable de nommer les fichiers avec le nom original du bloc qu'il contient.
 
 
-A plusieurs tout cela peut aller assez vite. :) 
+A quelques-uns, cela pourrait avancer assez vite. :) 
 
-Vous pouvez modifier, compléter et améliorer cette documentation pour aider d'autres participants à nous aider. 
+Vous pouvez bien sûr modifier, compléter et améliorer, traduire, cette documentation pour aider d'autres participants à nous aider. 
