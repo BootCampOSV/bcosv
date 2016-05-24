@@ -49,8 +49,9 @@ Celui ci par exemple :
 
 [rear_frame.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/rear_frame/rear_frame.stp)
 
-Il est éditable avec [freecad](http://www.freecadweb.org/). 
-(La pièce a été renommé , à ce stade c'est sans doute une mauvaise idée pour. Il peut servir d'exemple pour créer tous les autres sur le même principe. 
+Il est éditable avec [freecad](http://www.freecadweb.org/)et il peut servir d'exemple pour créer tous les autres fichiers sur le même principe.
+
+(Ici la pièce a été renommée, à ce stade c'est sans doute une mauvaise idée, il vaut mieux nommer le fichier d'après le nom originel de la pièce). Assez vite, il faudra convenir d'une nomenclature de nommage simple, non équivoque et informative.  
 
 ![rear_frame in freecad](images/freecad1.png)_
 
@@ -72,7 +73,7 @@ Il est éditable avec [freecad](http://www.freecadweb.org/).
 ## Travail à faire    
      
  + **Milestone 1** (Achieved 4%) : 
-  Tout le fichier STEP du véhicule OSV est découpé en blocs élémentaires. Chaque bloc est renommé avec une nomenclature approprié (à débattre
+  Tout le fichier STEP du véhicule OSV est découpé en blocs élémentaires. Chaque bloc est renommé avec une nomenclature appropriée (à débattre
   et organisé hiérarchiquement et fonctionnellement vis à vis des autres blocs du véhicule. La structure de graphe du châssis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).  
  + **Milestone 2**(Achieved 0%): Les pièces du véhicule physique non présentes dans le fichier STEP original sont détaillées et ajoutées. Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... ) 
  + **Milestone 3**(Achieved 0%): Le véhicule complet est documenté, dans toute ses parties et consultable en ligne,  y compris le système d'informations, le châssis, la motorisation, le système de batterie, la carrosserie .
