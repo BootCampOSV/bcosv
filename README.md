@@ -110,11 +110,12 @@ Tant que le nouveau fichier ma_jolie_piece.stp fichier n'est pas éditable sous 
       + ajouter de nouveaux blocs de directives prélevées (avec réflexion type SUDOKU) dans
  
            https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/tabby2.stp
-           Attention : ce n'est plus le fichier original du site OSV, Il y a eu une réorganisation du fichier à base de techniques de démêlage de spaghettis.
+           Attention : ce n'est plus le fichier original du site OSV
           
            Le niveau hiérarchique d'un bloc des pièces est indiquée dans le fichier :
          
-           https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt
+           [https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
+           
 
       Si le fichier est éditable sous freecad:
 
