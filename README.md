@@ -72,12 +72,11 @@ Il est éditable avec [freecad](http://www.freecadweb.org/).
 ## Travail à faire    
      
  + **Milestone 1** (Achieved 4%) : 
-  Tout le fichier STEP du chassis OSV est découpé en blocs élémentaires. Chaque bloc est renommé avec une nomenclature approprié (à débattre)
-  et organisé hiérarchiquement et fonctionnellement vis à vis des autres blocs système. La structure de graphe du châssis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).        
- + **Milestone 2**(Achieved 0%): Les pièces du châssis réel non présentes dans le fichier STEP original sont détaillées et ajoutées . Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... )    
- + **Milestone 3**(Achieved 0%): Le châssis complet du véhicule est documenté, dans toute ses parties et consultable en ligne,  y compris le système d'informations, le châssis et la carrosserie.
- + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, autres châssis, ajouts de capteurs, systèmes d'aide à la perception et à l'autonomisation....)     
-        
+  Tout le fichier STEP du véhicule OSV est découpé en blocs élémentaires. Chaque bloc est renommé avec une nomenclature approprié (à débattre
+  et organisé hiérarchiquement et fonctionnellement vis à vis des autres blocs système. La structure de graphe du châssis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).  
+ + **Milestone 2**(Achieved 0%): Les pièces du véhicule physique non présentes dans le fichier STEP original sont détaillées et ajoutées. Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... ) 
+ + **Milestone 3**(Achieved 0%): Le véhicule complet est documenté, dans toute ses parties et consultable en ligne,  y compris le système d'informations, le châssis, la motorisation, le système de batterie, la carrosserie .
+ + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, autres châssis, ajouts de capteurs, systèmes d'aide à la perception et à l'autonomisation....)  
 # Let's start ...
 
 ### Structure d'un fichier
