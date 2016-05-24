@@ -125,21 +125,21 @@ Algo pour enrichir la base avec un nouveau fichier stp
 
 + Tant que le nouveau fichier ma_nouvelle_piece.stp fichier n'est pas éditable sous freecad :
 
-  + ajouter de nouveaux blocs de directives prélevées (avec réflexion type SUDOKU) dans
+  + ajouter de nouveaux blocs de directives prélevées  dans
 
-       - https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/tabby2.stp
+       - [tabby2.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/tabby2.stp)
        Attention : ce n'est plus le fichier original du site OSV
 
-       - Le niveau hiérarchique d'un bloc des pièces est indiquée par son indentation dans le fichier :
+       - Le niveau hiérarchique d'un bloc de pièces est indiquée par son indentation dans le fichier :
 
         [ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
 
   + Si le fichier est éditable sous [freecad](http://www.freecadweb.org/):
 
-    - Bravo, une nouvelle pièce ou bloc qui pourra recevoir des nombreuse informations complémentaires est créée ! 
-    - Placer le fichier à sa place dans l'arborescence du véhicule et proposer un pull request  (une nouvelle contribution)
-        + Dans peu de temps, la nouvelle pièce sera convertie en html et visualisable sur le web ici
-                [mechanics](http://bootcamposv.github.io/bcosv/Doc/mechanics/)
+    - Bravo, une nouvelle pièce (ou bloc de pièces) qui pourra recevoir des nombreuse informations complémentaires est créée ! 
+    - Placer le fichier à sa place dans l'arborescence du véhicule et proposer un pull request (une nouvelle contribution, un ajout au projet)
+        + Dans peu de temps, la nouvelle pièce sera convertie en html et visualisable sur le réseau grâce à la branche `gh-pages` de ce dépôt. 
+                [Lien vers la visualisation 3D en ligne](http://bootcamposv.github.io/bcosv/Doc/mechanics/)
     - Sortir
 
   + Sinon:
