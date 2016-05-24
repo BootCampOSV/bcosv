@@ -41,7 +41,7 @@ L'un des résultats du boot camp OSV est l'amorçage du sous-projet OPEP, décri
 
 Les fichiers STEP sont déposés  à cette adresse  :
 
-    [Fichiers STEP](https://github.com/BootCampOSV/bcosv/tree/master/Doc/mechanics/stp)
+[Fichiers STEP](https://github.com/BootCampOSV/bcosv/tree/master/Doc/mechanics/stp)
 
 Les fichiers STEP (extension .stp)  sont des fichiers de type texte ( visualisable en ligne sauf quand ils sont trop gros )
 
