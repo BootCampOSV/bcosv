@@ -1,2 +1,9 @@
 The file tabby2.stp is not the original file from [www.osvhicle.com](http://www.osvehicle.com/download). 
 It has been slightly reorganized in order to ease the step file splitting. 
+
+The step file of the full vehicle is placed in the level0 directory
+All the bloc of level1 are placed in directory level1 etc 
+
+It does not make sense at that stage where the final nomencalture is not well
+defined and finalized to adopt a hierachical structure which reflect the whole
+system. This choice would be reconsidered later.
