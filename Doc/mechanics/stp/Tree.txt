@@ -155,11 +155,6 @@
 │   ├── PRT0005
 │   ├── PRT0006
 │   └── SILENTBLOCK_BRACC_SOSP_ANT__2
-├── create_tree.py
-├── f1
-├── front_frame
-│   └── telaio_anteriore_asm_36_asm.stp
-├── License.md
 ├── LONG_SUPP_SEDILI_4_ASM
 ├── MONT_POST_SUPPORTO_SEDILI_10_ASM
 │   ├── MANIFOLD_SOLID_BREP_2844
@@ -221,9 +216,6 @@
 │   └── VITI_TCEI_1_MIR
 ├── PTT01F004000A_PTT01F005000A_ASM_ASM
 │   └── ASM0004_ASM
-├── README
-├── rear_frame
-│   └── rear_frame.stp
 ├── _SAVROB_ASM_123_ASM
 ├── SILENT_BLOCK_AMMORT_ANT__ASM
 ├── STAFFA_FISSAGGIO_SEDILI_6
@@ -314,7 +306,6 @@
 │       └── TRAVERSO_POSTERIORE_13
 │           ├── MANIFOLD_SOLID_BREP_1098
 │           └── MANIFOLD_SOLID_BREP_1630
-├── test_path.py
 ├── TRAVERSO_PIANTONE_ASM_19_ASM
 │   ├── PIASTRA_DUOMO_ANT_PIANT_15_ASM
 │   │   ├── MANIFOLD_SOLID_BREP_5248
@@ -328,6 +319,4 @@
 ├── TRAVERSO_SUPP_SEDILI_6
 │   ├── MANIFOLD_SOLID_BREP_5737
 │   └── MANIFOLD_SOLID_BREP_6321
-└── wheel.stp
 
-317 directories, 13 files
