@@ -1,0 +1,19 @@
+      ...    Step File Reading : ../Doc/mechanics/stp/front_frame/front_frame.stp
+      ...    STEP File   Read    ... 
+Elapsed time: 0 Hours 0 Minutes 0.009774 Seconds 
+CPU user time: 0.01 seconds 
+CPU system time: 0 seconds 
+      ... Step File loaded  ... 
+Elapsed time: 0 Hours 0 Minutes 0.015059 Seconds 
+CPU user time: 0.01 seconds 
+CPU system time: 0 seconds 
+   13763 records (entities,sub-lists,scopes), 42628 parameters
+
+      ... Parameters prepared ... Elapsed time: 0 Hours 0 Minutes 0.02193 Seconds 
+CPU user time: 0.02 seconds 
+CPU system time: 0 seconds 
+      ...   Objets analysed  ... 
+Elapsed time: 0 Hours 0 Minutes 0.031543 Seconds 
+CPU user time: 0.03 seconds 
+CPU system time: 0 seconds 
+  STEP Loading done : 9185 Entities
