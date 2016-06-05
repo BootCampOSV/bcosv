@@ -159,15 +159,15 @@ Vous pouvez bien sûr modifier, compléter et améliorer, traduire, cette docume
 
 # 5 Juin 2016
 
-    + Le fichier step original est découpé en fichiers élémentaires. 
-    + Un Makefile qui permet de générer automatiquement le fichier WebGL associé a été placé dans chaque répertoire correspondant 
-    à un niveau hiérarchique donné.
++ Le fichier step original est à présent découpé en de nombreux fichiers élémentaires. 
++ Un Makefile permettant de générer automatiquement le fichier WebGL associé a été placé dans chaque répertoire correspondant 
+à un niveau hiérarchique donné.
 
-    A Faire 
-    -------
+A Faire 
+   -------
 
     + Associer une clé de hashage à chaque fichier pour en tracer l'évolution
     + Réfléchir à une nomenclature simple, explicite et non ambigüe.
-
+    + [Convention de Nommage](http://dtic.mil/ndia/2008technical/GastonEngineeringDrawings100G.pdf) 
 
 
