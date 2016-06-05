@@ -70,11 +70,14 @@ Il est éditable avec [freecad](http://www.freecadweb.org/)et il peut servir d'e
     - git push origin master 
 7. Sur son compte github faire un pull request pour demander l'intégration de sa pièce dans le projet
 
+# 28/05/2016
+
 ## Travail à faire    
-     
- + **Milestone 1** (Achieved 4%) : 
+
+ + **Milestone 1** (Achieved 80%) : 
   Tout le fichier STEP du véhicule OSV est découpé en blocs élémentaires. Chaque bloc est renommé avec une nomenclature appropriée (à débattre
-  et organisé hiérarchiquement et fonctionnellement vis à vis des autres blocs du véhicule. La structure de graphe du châssis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).  
+  et organisé hiérarchiquement et fonctionnellement vis à vis des autres blocs du véhicule. La structure de graphe du châssis est dégagée (liens d'appartenance à un bloc et liens fonctionnels entre blocs).
+
  + **Milestone 2**(Achieved 0%): Les pièces du véhicule physique non présentes dans le fichier STEP original sont détaillées et ajoutées. Les méta informations sur chaque pièces sont ajoutées. (Fournisseurs, prix, masse, distance aux contraintes d'homologation... ) 
  + **Milestone 3**(Achieved 0%): Le véhicule complet est documenté, dans toute ses parties et consultable en ligne,  y compris le système d'informations, le châssis, la motorisation, le système de batterie, la carrosserie .
  + **Milestone 4** (Achieved 0%): Créer des évolutions sous formes de branches git de nouvelles évolutions du véhicule. (Autres motorisations, autres châssis, ajouts de capteurs, systèmes d'aide à la perception et à l'autonomisation....)  
@@ -151,6 +154,20 @@ Algo pour enrichir la base avec un nouveau fichier stp
 Dans un premier temps, il est préférable de nommer les fichiers avec le nom original du bloc qu'il contient.
 
 
-A quelques-uns, cela pourrait avancer assez vite. :) 
-
 Vous pouvez bien sûr modifier, compléter et améliorer, traduire, cette documentation pour aider d'autres participants à nous aider. 
+
+
+# 5 Juin 2016
+
+    + Le fichier step original est découpé en fichiers élémentaires. 
+    + Un Makefile qui permet de générer automatiquement le fichier WebGL associé a été placé dans chaque répertoire correspondant 
+    à un niveau hiérarchique donné.
+
+    A Faire 
+    -------
+
+    + Associer une clé de hashage à chaque fichier pour en tracer l'évolution
+    + Réfléchir à une nomenclature simple, explicite et non ambigüe.
+
+
+
