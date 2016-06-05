@@ -5,7 +5,7 @@ FILE_DESCRIPTION(
 /* description */ (''),
 /* implementation_level */ '2;1');
 
-FILE_NAME(ASM0011_MIR_ASM.stp,Sun Jun  5 19:08:04 2016,,OSV Documentation,,,);
+FILE_NAME('ASM0011_MIR_ASM.stp','Sun Jun  5 22:05:41 2016',(''),('OSV Documentation'),'','','');
 
 FILE_SCHEMA (('AUTOMOTIVE_DESIGN { 1 0 10303 214 3 1 1 }'));
 ENDSEC;

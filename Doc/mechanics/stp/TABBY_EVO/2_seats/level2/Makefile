@@ -1,13 +1,7 @@
 SRC=$(wildcard *.stp)
 HTML=$(SRC:.stp=.html)
-STEP=$(SRC:.stp=.step)
 
 html: $(HTML)
-
-step: $(STEP)
-
-%.step: %.stp
-	filterstp.py $< > $@
 
 %.html: %.stp
 	stp2html.py  $< 2 2> /dev/null >/dev/null
