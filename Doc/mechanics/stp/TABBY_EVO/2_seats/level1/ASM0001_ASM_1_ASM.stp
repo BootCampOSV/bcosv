@@ -3,16 +3,7 @@ HEADER;
 
 FILE_DESCRIPTION(
 
-FILE_NAME(
-/* name */ 
-'C:/OSVehicle/stp/TABBY EVO/2 seats V.0.1/level1/ASM0001_ASM_1_ASM.stp',
-
-/* time_stamp */ '2016-06-02T11:00:54+02:00',
-/* author */ (''),
-/* organization */ (''),
-/* preprocessor_version */ 'ST-DEVELOPER v16.5',
-/* originating_system */ 'Autodesk Translation Framework v5.0.0.3310',
-/* authorisation */ '');
+FILE_NAME(ASM0001_ASM_1_ASM.stp,Sun Jun  5 19:06:41 2016,,OSV Documentation,,,);
 
 FILE_SCHEMA (('AUTOMOTIVE_DESIGN { 1 0 10303 214 3 1 1 }'));
 ENDSEC;
