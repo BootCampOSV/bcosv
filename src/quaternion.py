@@ -1,5 +1,6 @@
 import networkx as nx
 import numpy as np 
+import numpy.linalg as la
 import matplotlib.pyplot as plt 
 import imusim.maths.quaternions as q
 from itertools import takewhile,permutations
@@ -40,12 +41,13 @@ def view(G):
         qpt = q.QuaternionArray(np.hstack((np.zeros(Np)[:,None],pt)))
         if k==0:
             n0 = n
-            print n0 
+            #print n0 
+            pts = pt
         else:
             path = nx.shortest_path(nx.Graph(G),n0,n)
             print n,path
             qts = q.Quaternion(0,0,0,0)
-            qrs = q.Quaternion(0,1,0,0)
+            qrs = q.Quaternion(1,0,0,0)
             for k in np.arange(len(path)-1):
                 ledges = G.edges()
                 # handle edge orientation 
@@ -59,8 +61,28 @@ def view(G):
                     qr = G.edge[path[k+1]][path[k]]['qr'].conjugate
                 qts = qts + qt
                 qrs = qrs*qr 
-            print qts
-            print qrs
+            #print qts
+            #print qrs
             qce=qrs*qpt*qrs.conjugate
             pt=(qce.vector+qts.vector).T
-        ax.scatter(pt[:,0],pt[:,1],pt[:,2],color=col[n])
+            pts = np.vstack((pts,pt))
+    return(pts)
+
+def is_isomorph(pt1,pt2):
+    assert(pt1.shape==pt2.shape)
+    pt1c = pt1 - np.sum(pt1,axis=0)/pt1.shape[0]
+    pt2c = pt2 - np.sum(pt2,axis=0)/pt2.shape[0]
+    A=np.dot(pt1c,pt1c.T)
+    B=np.dot(pt2c,pt1c.T)
+    M =np.dot(B,la.inv(A))
+    err = pt2c-np.dot(M,pt1c)
+    err2 = np.sum(err*err)
+    return(err2)
+
+pts1 = view(G)
+print('--')
+pts2 = view(G)
+print('--')
+pts3 = view(G)
+#        ax.scatter(pt[:,0],pt[:,1],pt[:,2],color=col[n])
+is_isomorph(pts1,pts2)
