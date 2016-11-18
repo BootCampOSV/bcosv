@@ -4,6 +4,8 @@ import numpy.linalg as la
 import matplotlib.pyplot as plt 
 import imusim.maths.quaternions as q
 from itertools import takewhile,permutations
+import pdb 
+
 Np =  3 
 Nc =  6 
 G = nx.DiGraph()
@@ -69,20 +71,50 @@ def view(G):
     return(pts)
 
 def is_isomorph(pt1,pt2):
+    """ test isomorphism between 2 sets of points
+
+    Examples
+    --------
+
+        >>> import numpy as np 
+        >>> from pylayers.geomutil import *
+        >>> pt1 = np.random(3,10)
+        >>> M = MEulerAngle(0.3,0.5,0.9)
+        >>> pt2 = np.dot(M,pt1)
+        >>> v = np.array([10,20,30])[:,None]
+        >>> pt2 = pt2+v
+        >>> is_isomorph(pt1,pt2)
+
+    """
     assert(pt1.shape==pt2.shape)
-    pt1c = pt1 - np.sum(pt1,axis=0)/pt1.shape[0]
-    pt2c = pt2 - np.sum(pt2,axis=0)/pt2.shape[0]
+    pt1c = pt1 - np.sum(pt1,axis=0)/pt1.shape[1]
+    pt2c = pt2 - np.sum(pt2,axis=0)/pt2.shape[1]
     A=np.dot(pt1c,pt1c.T)
     B=np.dot(pt2c,pt1c.T)
     M =np.dot(B,la.inv(A))
     err = pt2c-np.dot(M,pt1c)
     err2 = np.sum(err*err)
-    return(err2)
+    if err2 < 1e-10:
+        return(True)
+    else:
+        return(False)
 
 pts1 = view(G)
 print('--')
 pts2 = view(G)
 print('--')
 pts3 = view(G)
+if is_isomorph(pts1,pts2):
+    print "isomorph"
 #        ax.scatter(pt[:,0],pt[:,1],pt[:,2],color=col[n])
-is_isomorph(pts1,pts2)
+import numpy as np 
+from pylayers.util.geomutil import *
+pt1 = np.random.rand(3,10)
+M = MEulerAngle(0,0,0)
+pt2 = np.dot(M,pt1)
+v = np.array([0,0,0])[:,None]
+pt2 = pt2+v
+if is_isomorph(pt1,pt2):
+    print "isomorph"
+else:
+    print "not isomorph"
