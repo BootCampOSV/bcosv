@@ -4,14 +4,14 @@ from OCC.Display.SimpleGui import init_display
 import sys
 
 step_reader = STEPControl_Reader()
-#status = step_reader.ReadFile('../stp/TABBY_EVO_step_asm.stp')
+status = step_reader.ReadFile('../stp/TABBY_EVO_step_asm.stp')
 #status = step_reader.ReadFile('../stp/single.stp')
 #status = step_reader.ReadFile('../stp/both.stp')
 #status = step_reader.ReadFile('../stp/part123.stp')
 #status  =  step_reader.ReadFile('../stp/wheel.stp')
 #status = step_reader.ReadFile('../stp/tab2clean.stp')
 #status = step_reader.ReadFile('../stp/reconstructed.stp')
-status = step_reader.ReadFile('../asm0001_asm.stp')
+#status = step_reader.ReadFile('../asm0001_asm.stp')
 #status = step_reader.ReadFile('../stp/example.stp')
 #status = step_reader.ReadFile('../stp/TabbyEvo_4.stp')
 #status = step_reader.ReadFile('../stp/cylinder_block.stp')

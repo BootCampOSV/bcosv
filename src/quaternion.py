@@ -3,19 +3,24 @@ import numpy as np
 import numpy.linalg as la
 import matplotlib.pyplot as plt 
 import imusim.maths.quaternions as q
+import scipy.spatial.distance as di
 from itertools import takewhile,permutations
 from mpl_toolkits.mplot3d import Axes3D
 import pdb 
 
 plt.close('all')
+np.random.seed(10)
 # Np : Number of point per cloud 
-Np =  2 
-Nc =  15 
+Np =  3 
+Nc =  10
 G = nx.DiGraph()
 for ic in range(Nc):
-    c = np.random.rand(Np,3)
-    c = c - np.mean(c,axis=0)
-    G.add_node(ic+1,pt=c)
+    #v = np.random.rand(3)
+    v  = np.array([0,0,1])
+    vn = v/np.sqrt(np.sum(v*v))
+    c = vn[None,:]*np.linspace(1,2,Np)[:,None]
+    cc = c - np.mean(c,axis=0)
+    G.add_node(ic+1,pt=cc)
 
 ln = G.node.keys()
 
@@ -31,9 +36,10 @@ while not nx.is_connected(nx.Graph(G)):
             v = 20*(np.random.rand(3)-0.5)
             u = np.random.rand(3)
             un = u/np.sqrt(np.sum(u*u))
+            #print un
             th = 2*np.pi*np.random.rand(1)
             qt = q.Quaternion(0,v[0],v[1],v[2])
-            qr = q.Quaternion(np.cos(th/2),np.sin(th/2)*un[0],np.sin(th/2)*un[1],np.sin(th/2)*un[2])
+            qr = q.Quaternion(np.cos(th/2.),np.sin(th/2.)*un[0],np.sin(th/2.)*un[1],np.sin(th/2.)*un[2])
             G.add_edge(n1,n2,qt=qt,qr=qr)
 
 col = ['r','b','g','c','m','k','y'] 
@@ -41,22 +47,33 @@ col = ['r','b','g','c','m','k','y']
 def view(G,Nc=3,Np=2):
     """  view graph 
     """ 
+    # pick a random permutation of graph nodes
     nodelist = np.random.permutation(G.node.keys())
-    fig = plt.figure()
-    ax = fig.gca(projection='3d')
-    pts = np.zeros((Nc*Np,3))
+    # loop over nodes of the graph 
+    qptf = q.QuaternionArray(np.zeros((Nc*Np,4)))
+    dqpt = {}
     for k1,n in enumerate(nodelist):
-        pt = G.node[n]['pt'] 
-        qpt = q.QuaternionArray(np.hstack((np.zeros(Np)[:,None],pt)))
+        # get set of points from node n
+        pt  = G.node[n]['pt'] 
+        # add 0 in scalar part for building associated quaternion 
+        pte = np.hstack((np.zeros(Np)[:,None],pt))
+        # build the array of quaternions 
+        #if k1==0:
+        qpt  = q.QuaternionArray(pte)
+        #else:
+        #    qpt = q.QuaternionArray(np.vstack((qpt.array,pte)))
         if k1==0:
+            # cluster n0 forces the origin
             n0 = n
             #print n0 
             #pts = pt
         else:
+            # find shortest path from node n0 (origin cluster) to cluster n
             path = nx.shortest_path(nx.Graph(G),n0,n)
             print n,path
             qts = q.Quaternion(0,0,0,0)
             qrs = q.Quaternion(1,0,0,0)
+            # determine the chaining of quaternion along the path 
             for k2 in np.arange(len(path)-1):
                 ledges = G.edges()
                 # handle edge orientation 
@@ -66,23 +83,35 @@ def view(G,Nc=3,Np=2):
                 else:
                     qt = -G.edge[path[k2+1]][path[k2]]['qt']
                     qr =  G.edge[path[k2+1]][path[k2]]['qr'].conjugate
-                print "qt :",qt
-                print "qr :",qr
-                #qts = qts + qt
-                qts = qts
-                qrs = qrs*qr
-                print "qts : ",qts
-                print "qrs : ",qrs
+                    #qt =  G.edge[path[k2+1]][path[k2]]['qt']
+                    #qr =  G.edge[path[k2+1]][path[k2]]['qr']
+
+                #qpt = qr*qt*qr.conjugate
+                #print "qt :",qt
+                #print "qr :",qr
+                qts = qr*qts*qr.conjugate + qt
+                #qts = qts
+                # Attention le produit des quaternions n'est pas commutatif
+                qrs = qr*qrs
+                print qrs.magnitude
+                #print "qts : ",qts
+                #print "qrs : ",qrs
             #print qts
             #print qrs
-            qce = qrs*qpt*qrs.conjugate
-            pt  = (qce.vector+qts.vector).T
-        pts[k1*Np:(k1+1)*Np,:] = pt 
+            #print qce.vector
+            #print qts.vector
+            qpt = qrs*qpt*qrs.conjugate+qts
+        dqpt[n] = qpt
+        #pts[k1*Np:(k1+1)*Np,:] = pt 
     #return(pts-np.mean(pts,axis=0))
-    return(pts)
+    for k in range(1,len(nodelist)+1):
+        qptf[(k-1)*Np:k*Np,:]= dqpt[k] 
+
+    return(qptf,dqpt)
 
 def is_isomorph(pt1,pt2):
     """ test isomorphism between 2 sets of points
+
 
     Examples
     --------
@@ -111,19 +140,37 @@ def is_isomorph(pt1,pt2):
     else:
         return(False,err2)
 
-pts1 = view(G,Nc=Nc,Np=Np)
+qpts1,d1 = view(G,Nc=Nc,Np=Np)
 print('--')
-pts2 = view(G,Nc=Nc,Np=Np)
+qpts2,d2 = view(G,Nc=Nc,Np=Np)
 print('--')
-pts3 = view(G,Nc=Nc,Np=Np)
+qpts3,d3 = view(G,Nc=Nc,Np=Np)
+pts1 = qpts1.vector.T
+pts2 = qpts2.vector.T
+pts3 = qpts3.vector.T
 #if is_isomorph(pts1,pts2)[0]:
 #    print "isomorph"
+#pts1 = pts1-np.mean(pts1,axis=0)
+#pts2 = pts2-np.mean(pts2,axis=0)
+#pts3 = pts3-np.mean(pts3,axis=0)
+D1 = di.cdist(pts1,pts1)
+D2 = di.cdist(pts2,pts2)
+D3 = di.cdist(pts3,pts3)
+plt.subplot(131)
+plt.imshow(D1,cmap=cm.jet)
+plt.colorbar()
+plt.subplot(132)
+plt.imshow(D2,cmap=cm.jet)
+plt.colorbar()
+plt.subplot(133)
+plt.imshow(D3,cmap=cm.jet)
+plt.colorbar()
 fig1 = plt.figure()
 ax1 = fig1.add_subplot(111,projection='3d')
-ax1.scatter(pts1[:,0],pts1[:,1],pts1[:,2],s=20,color='r')
-#fig2=plt.figure()
 #ax2 = fig2.add_subplot(111,projection='3d')
+ax1.scatter(pts1[:,0],pts1[:,1],pts1[:,2],s=20,color='r')
 ax1.scatter(pts2[:,0],pts2[:,1],pts2[:,2],s=20,color='b')
+ax1.scatter(pts3[:,0],pts3[:,1],pts3[:,2],s=20,color='g')
 plt.show()
 
 #import numpy as np 
