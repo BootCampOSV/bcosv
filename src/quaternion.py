@@ -6,12 +6,13 @@ import imusim.maths.quaternions as q
 import scipy.spatial.distance as di
 from itertools import takewhile,permutations
 from mpl_toolkits.mplot3d import Axes3D
+import matplotlib.cm as cm
 import pdb 
 
 plt.close('all')
-np.random.seed(10)
-# Np : Number of point per cloud 
-Np =  3 
+#np.random.seed(10)
+# Np : Number of points per cloud 
+Np =  2 
 Nc =  10
 G = nx.DiGraph()
 for ic in range(Nc):
@@ -68,8 +69,9 @@ def view(G,Nc=3,Np=2):
             #print n0 
             #pts = pt
         else:
-            # find shortest path from node n0 (origin cluster) to cluster n
-            path = nx.shortest_path(nx.Graph(G),n0,n)
+            # find shortest path from cluster to cluster n0 (origin cluster) 
+            # all cluster will be expressed in the frame of n0 
+            path = nx.shortest_path(nx.Graph(G),n,n0)
             print n,path
             qts = q.Quaternion(0,0,0,0)
             qrs = q.Quaternion(1,0,0,0)
@@ -77,30 +79,22 @@ def view(G,Nc=3,Np=2):
             for k2 in np.arange(len(path)-1):
                 ledges = G.edges()
                 # handle edge orientation 
+                # if the selected edge is reversed
+                #   - change sign of translation 
+                #   - conjugate quaternion rotation 
+                #
                 if (path[k2],path[k2+1]) in ledges:
                     qt = G.edge[path[k2]][path[k2+1]]['qt']
                     qr = G.edge[path[k2]][path[k2+1]]['qr']
                 else:
                     qt = -G.edge[path[k2+1]][path[k2]]['qt']
-                    qr =  G.edge[path[k2+1]][path[k2]]['qr'].conjugate
-                    #qt =  G.edge[path[k2+1]][path[k2]]['qt']
-                    #qr =  G.edge[path[k2+1]][path[k2]]['qr']
+                    qr =  G.edge[path[k2+1]][path[k2]]['qr'].conjugate()
 
-                #qpt = qr*qt*qr.conjugate
-                #print "qt :",qt
-                #print "qr :",qr
                 qts = qr*qts*qr.conjugate + qt
-                #qts = qts
-                # Attention le produit des quaternions n'est pas commutatif
-                qrs = qr*qrs
-                print qrs.magnitude
-                #print "qts : ",qts
-                #print "qrs : ",qrs
-            #print qts
-            #print qrs
-            #print qce.vector
-            #print qts.vector
-            qpt = qrs*qpt*qrs.conjugate+qts
+                qrs = qrs*qr
+                # assert unitarity of quaternion
+                assert(np.allclose(qrs.magnitude,1))
+            qpt = qrs*qpt*qrs.conjugate()+qts
         dqpt[n] = qpt
         #pts[k1*Np:(k1+1)*Np,:] = pt 
     #return(pts-np.mean(pts,axis=0))

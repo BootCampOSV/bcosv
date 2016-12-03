@@ -8,7 +8,6 @@ import sys
 #
 filename = sys.argv[1]
 level = sys.argv[2]
-pdb.set_trace
 fileout = filename.replace('.stp','')
 step_reader = STEPControl_Reader()
 step_reader.ReadFile(filename)

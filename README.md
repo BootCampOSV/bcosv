@@ -164,10 +164,12 @@ Vous pouvez bien sûr modifier, compléter et améliorer, traduire, cette docume
 à un niveau hiérarchique donné.
 
 A Faire 
-   -------
+-------
 
     + Associer une clé de hashage à chaque fichier pour en tracer l'évolution
     + Réfléchir à une nomenclature simple, explicite et non ambigüe.
     + [Convention de Nommage](http://dtic.mil/ndia/2008technical/GastonEngineeringDrawings100G.pdf) 
 
+# 3 Décembre 2016 
 
+    + Articuler pythonOCC, pygit2 , grapheekdb
