@@ -1,5 +1,6 @@
 import ccad.model as cm
 import ccad.display as cd
+import ccad.entities as ce
 import OCC.Display.SimpleGui as SimpleGui
 import numpy as np 
 from mayavi.mlab import *
@@ -20,7 +21,7 @@ def view(model):
 
 
 solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
-entity = cm.entity(solid)
+entity = ce.entity(solid)
 #lshell = t1.subshapes('shell')
 #pc = np.array(t1.center())
 #t2 = t1.copy()
@@ -34,8 +35,8 @@ for k in entity.G.node:
     data = entity.G.node[k]['entities']
     points3d(data[0,:],data[1,:],data[2,:],resolution=10,mode='sphere',scale_factor=10)
 #ax.volume(
-s2=entity.G.node[2]['shape']
+s2 = entity.G.node[2]['shape']
 lf = s2.subshapes('face')
-g1 = _GProp_GProps()
-lf0 = lf[0]
-_brepgprop_SurfaceProperties(lf0, g1)
+#g1 = _GProp_GProps()
+#lf0 = lf[0]
+#_brepgprop_SurfaceProperties(lf0, g1)
