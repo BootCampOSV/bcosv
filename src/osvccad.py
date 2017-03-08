@@ -4,6 +4,7 @@ import ccad.entities as ce
 from numpy.linalg import svd
 from quaternions import *
 import OCC.Display.SimpleGui as SimpleGui
+import os
 import pdb 
 import numpy as np 
 import networkx as nx 
@@ -66,6 +67,12 @@ for k in entity.G.node:
     S2 = str(int(np.ceil(S[2])))
 
     sig = S0+'_'+S1+'_'+S2
+    # if signature has not been already encountered, create new file
+    filename = sig+'.stp'
+    if not os.path.isfile(filename):
+       shp.translate(-ptm)
+       shp.rotate(np.array([0,0,0]),vec,ang)
+       shp.to_step(filename)
 
     print(sig,ptm,vec,ang)
 
