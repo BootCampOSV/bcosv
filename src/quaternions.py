@@ -137,7 +137,26 @@ class Quaternion(object):
     def vect(self):
         v = np.hstack((self.a.imag,self.b.real,self.b.imag))
         return(v)
-        
+
+    def from_mat(self,M):
+        tr = np.trace(M)
+        if (tr > 0): 
+            S = np.sqrt(tr+1.0)*2 
+            self.a = 0.25 * S +1j* (M[2,1] - M[1,2])/ S
+            self.b = (M[0,2]-M[2,0]/S)+1j*(M[1,0]-M[0,1])/S
+        elif ((M[0,0] > M[1,1])&(M[0,0]>M[2,2])):
+            S = np.sqrt(1.0 + M[0,0] - M[1,1] - M[2,2])* 2
+            self.a = (M[2,1] - M[1,2])/S +1j*0.25*S
+            self.b = M[0,1] + M[1,0])/S + 1j*(M[0,2] + M[2,0])/S 
+        elif (M[1,1] > M[2,2]):  
+            S = np.sqrt(1.0 + M[1,1] - M[0,0]  - M[2,2]* 2
+            self.a = (M[0,2]  - M[2,0])/S+1j*(M[0,1]+M[1,0])/S
+            self.b = 0.25*S+1j* (M[1,2]  + M[2,1]) / S 
+        else: 
+            S = np.sqrt(1.0 + M[2,2]  - M[0,0]  - M[1,1]*2
+            self.a = (M[1,0] - M[0,1])/S +1j* (M[0,2]  + M[2,0])/S
+            self.b = (M[1,2] + M[2,1])/S +1j* 0.25 * S
+
     def __div__(self,other):
         u  = 1./abs(other)**2
         qu = Quaternion(u+0j,np.zeros(u.shape)+0j)

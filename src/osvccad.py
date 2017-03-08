@@ -27,8 +27,8 @@ def view(model):
 #
 
 # 1) get a solid from step
-#solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
-solid  = cm.from_step('level1/MOTORIDUTTORE_ASM.stp')
+solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
+#solid  = cm.from_step('level1/MOTORIDUTTORE_ASM.stp')
 # 2) construct entity from solid
 entity = ce.entity(solid)
 
@@ -48,22 +48,29 @@ entity = ce.entity(solid)
 # Loop over all entities 
 #
 for k in entity.G.node:
-    data = entity.G.node[k]['entities']
+    data = entity.G.node[k]['pcloud']
     pts = np.vstack((data[0,:],data[1,:],data[2,:])).T
     ptm = np.mean(pts,axis=0)
     ptsm = pts - ptm 
     U,S,V = svd(ptsm)
-    pdb.set_trace()
+
+    shp = entity.G.node[k]['shape']
+
     S0 = str(int(np.ceil(S[0])))
     S1 = str(int(np.ceil(S[1])))
     S2 = str(int(np.ceil(S[2])))
+
     sig = S0+'_'+S1+'_'+S2
+
     print(sig,ptm)
+
     entity.G.node[k]['name']=sig
     entity.G.node[k]['R']=V
     entity.G.node[k]['ptm']=ptm
+
     # Mayavi vizualisation of point cloud
-    points3d(data[0,:],data[1,:],data[2,:],resolution=10,mode='sphere',scale_factor=10)
+    #points3d(data[0,:],data[1,:],data[2,:],resolution=10,mode='sphere',scale_factor=10)
+
 #ax.volume(
 s2 = entity.G.node[2]['shape']
 lf = s2.subshapes('face')
