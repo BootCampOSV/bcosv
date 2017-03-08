@@ -3,6 +3,7 @@ import ccad.display as cd
 import ccad.entities as ce
 from numpy.linalg import svd
 import OCC.Display.SimpleGui as SimpleGui
+import pdb 
 import numpy as np 
 import networkx as nx 
 from mayavi.mlab import *
@@ -26,7 +27,8 @@ def view(model):
 #
 
 # 1) get a solid from step
-solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
+#solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
+solid  = cm.from_step('level1/MOTORIDUTTORE_ASM.stp')
 # 2) construct entity from solid
 entity = ce.entity(solid)
 
@@ -51,10 +53,12 @@ for k in entity.G.node:
     ptm = np.mean(pts,axis=0)
     ptsm = pts - ptm 
     U,S,V = svd(ptsm)
+    pdb.set_trace()
     S0 = str(int(np.ceil(S[0])))
     S1 = str(int(np.ceil(S[1])))
     S2 = str(int(np.ceil(S[2])))
     sig = S0+'_'+S1+'_'+S2
+    print(sig,ptm)
     entity.G.node[k]['name']=sig
     entity.G.node[k]['R']=V
     entity.G.node[k]['ptm']=ptm
