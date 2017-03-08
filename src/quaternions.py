@@ -142,18 +142,18 @@ class Quaternion(object):
         tr = np.trace(M)
         if (tr > 0): 
             S = np.sqrt(tr+1.0)*2 
-            self.a = 0.25 * S +1j* (M[2,1] - M[1,2])/ S
+            self.a = 0.25 * S +1j* (M[2,1] - M[1,2])/S
             self.b = (M[0,2]-M[2,0]/S)+1j*(M[1,0]-M[0,1])/S
         elif ((M[0,0] > M[1,1])&(M[0,0]>M[2,2])):
-            S = np.sqrt(1.0 + M[0,0] - M[1,1] - M[2,2])* 2
+            S = np.sqrt(1.0 + M[0,0] - M[1,1] - M[2,2])*2
             self.a = (M[2,1] - M[1,2])/S +1j*0.25*S
-            self.b = M[0,1] + M[1,0])/S + 1j*(M[0,2] + M[2,0])/S 
+            self.b = (M[0,1] + M[1,0])/S + 1j*(M[0,2] + M[2,0])/S 
         elif (M[1,1] > M[2,2]):  
-            S = np.sqrt(1.0 + M[1,1] - M[0,0]  - M[2,2]* 2
+            S = np.sqrt(1.0 + M[1,1] - M[0,0]  - M[2,2])*2
             self.a = (M[0,2]  - M[2,0])/S+1j*(M[0,1]+M[1,0])/S
             self.b = 0.25*S+1j* (M[1,2]  + M[2,1]) / S 
         else: 
-            S = np.sqrt(1.0 + M[2,2]  - M[0,0]  - M[1,1]*2
+            S = np.sqrt(1.0 + M[2,2]  - M[0,0]  - M[1,1])*2
             self.a = (M[1,0] - M[0,1])/S +1j* (M[0,2]  + M[2,0])/S
             self.b = (M[1,2] + M[2,1])/S +1j* 0.25 * S
 
@@ -177,6 +177,10 @@ class Quaternion(object):
             a = np.log(q) + 1j*v2[0]
             b = v2[1]+1j*v2[2]
         return(Quaternion(a,b))
+    
+    def vec(self):
+        v = np.vstack((self.a.imag,self.b.real,self.b.imag))
+        return(v)
 
     def exp(self):
         """ exponential of a quaternion 

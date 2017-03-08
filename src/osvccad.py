@@ -2,6 +2,7 @@ import ccad.model as cm
 import ccad.display as cd
 import ccad.entities as ce
 from numpy.linalg import svd
+from quaternions import *
 import OCC.Display.SimpleGui as SimpleGui
 import pdb 
 import numpy as np 
@@ -53,7 +54,9 @@ for k in entity.G.node:
     ptm = np.mean(pts,axis=0)
     ptsm = pts - ptm 
     U,S,V = svd(ptsm)
-
+    
+    q = Quaternion()
+    q.from_mat(V)
     shp = entity.G.node[k]['shape']
 
     S0 = str(int(np.ceil(S[0])))
@@ -67,6 +70,7 @@ for k in entity.G.node:
     entity.G.node[k]['name']=sig
     entity.G.node[k]['R']=V
     entity.G.node[k]['ptm']=ptm
+    entity.G.node[k]['q']=q
 
     # Mayavi vizualisation of point cloud
     #points3d(data[0,:],data[1,:],data[2,:],resolution=10,mode='sphere',scale_factor=10)
