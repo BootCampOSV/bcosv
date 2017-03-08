@@ -135,8 +135,16 @@ class Quaternion(object):
         return self.a.real
 
     def vect(self):
-        v = np.hstack((self.a.imag,self.b.real,self.b.imag))
+        v = np.hstack((self.a.imag,self.b.real,self.b.imag)).T
         return(v)
+    
+    def vecang(self):
+        v = self.vect()
+        cas2 = self.scal()
+        sas2 = np.sqrt(np.sum(v*v))
+        vn = v/sas2
+        angle = 2.*np.arctan2(sas2,cas2)
+        return(vn,angle)
 
     def from_mat(self,M):
         tr = np.trace(M)
@@ -178,10 +186,6 @@ class Quaternion(object):
             b = v2[1]+1j*v2[2]
         return(Quaternion(a,b))
     
-    def vec(self):
-        v = np.vstack((self.a.imag,self.b.real,self.b.imag))
-        return(v)
-
     def exp(self):
         """ exponential of a quaternion 
         """

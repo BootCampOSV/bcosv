@@ -57,6 +57,8 @@ for k in entity.G.node:
     
     q = Quaternion()
     q.from_mat(V)
+    vec,ang = q.vecang()
+
     shp = entity.G.node[k]['shape']
 
     S0 = str(int(np.ceil(S[0])))
@@ -65,7 +67,7 @@ for k in entity.G.node:
 
     sig = S0+'_'+S1+'_'+S2
 
-    print(sig,ptm)
+    print(sig,ptm,vec,ang)
 
     entity.G.node[k]['name']=sig
     entity.G.node[k]['R']=V
