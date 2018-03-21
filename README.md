@@ -133,7 +133,7 @@ Algo pour enrichir la base avec un nouveau fichier stp
        - [tabby2.stp](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/stp/tabby2.stp)
        Attention : ce n'est plus le fichier original du site OSV
 
-       - Le niveau hiérarchique d'un bloc de pièces est indiquée par son indentation dans le fichier :
+       - Le niveau hiérarchique d'un bloc de pièces est indiqué par son indentation dans le fichier :
 
         [ListProduct.txt](https://github.com/BootCampOSV/bcosv/blob/master/Doc/mechanics/ListProduct.txt)
 

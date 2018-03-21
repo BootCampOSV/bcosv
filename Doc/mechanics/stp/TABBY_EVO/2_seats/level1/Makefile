@@ -10,7 +10,7 @@ step: $(STEP)
 	filterstp.py $< > $@
 
 %.html: %.stp
-	stp2html.py  $< 1 2> /dev/null >/dev/null
+	python ./stp2html.py  $< 1 2> /dev/null >/dev/null
 	cp $@ $(WEBOSV)/level1
 clean:
 	rm -f *.html
