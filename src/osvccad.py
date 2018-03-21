@@ -1,6 +1,6 @@
 import ccad.model as cm
 import ccad.display as cd
-import ccad.entities as ce
+import entities as ce  
 from numpy.linalg import svd
 from quaternions import *
 import OCC.Display.SimpleGui as SimpleGui
@@ -30,10 +30,10 @@ def view(model):
 
 # 1) get a solid from step
 solid  = cm.from_step('level1/ASM0001_ASM_1_ASM.stp')
+#solid  = cm.from_step('Duplex_A_20110907.ifc')
 #solid  = cm.from_step('level1/MOTORIDUTTORE_ASM.stp')
 # 2) construct entity from solid
 entity = ce.entity(solid)
-
 #
 # An entity is a solid and a graph
 #
@@ -56,9 +56,10 @@ for k in entity.G.node:
     ptsm = pts - ptm 
     U,S,V = svd(ptsm)
     
-    q = Quaternion()
-    q.from_mat(V)
-    vec,ang = q.vecang()
+    qt = Quaternion(a=1j*ptm[0],b=ptm[1]+1j*ptm[2])
+    qr = Quaternion()
+    qr.from_mat(V)
+    vec,ang = qr.vecang()
 
     shp = entity.G.node[k]['shape']
 
@@ -67,7 +68,7 @@ for k in entity.G.node:
     S2 = str(int(np.ceil(S[2])))
 
     sig = S0+'_'+S1+'_'+S2
-    # if signature has not been already encountered, create new file
+    # if signature has not been already encountered, create a new file
     filename = sig+'.stp'
     if not os.path.isfile(filename):
        shp.translate(-ptm)
@@ -76,10 +77,9 @@ for k in entity.G.node:
 
     print(sig,ptm,vec,ang)
 
-    entity.G.node[k]['name']=sig
-    entity.G.node[k]['R']=V
-    entity.G.node[k]['ptm']=ptm
-    entity.G.node[k]['q']=q
+    entity.G.node[k]['name'] = sig
+    entity.G.node[k]['qr'] = qr
+    entity.G.node[k]['qt'] = qt
 
     # Mayavi vizualisation of point cloud
     #points3d(data[0,:],data[1,:],data[2,:],resolution=10,mode='sphere',scale_factor=10)
