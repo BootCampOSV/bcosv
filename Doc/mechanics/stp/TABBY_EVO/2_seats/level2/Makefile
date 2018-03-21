@@ -4,7 +4,7 @@ HTML=$(SRC:.stp=.html)
 html: $(HTML)
 
 %.html: %.stp
-	stp2html.py  $< 2 2> /dev/null >/dev/null
+	python ./stp2html.py  $< 2 2> /dev/null >/dev/null
 	cp $@ $(WEBOSV)/level2
 clean:
 	rm -f *.html
