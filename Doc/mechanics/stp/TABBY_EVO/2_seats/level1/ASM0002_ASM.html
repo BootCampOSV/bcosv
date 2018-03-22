@@ -1,0 +1,135 @@
+<!DOCTYPE HTML><html lang="en">
+<head>
+    <title>pythonOCC 0.18.2-dev x3dom renderer</title>
+    <meta name='Author' content='Thomas Paviot - tpaviot@gmail.com'>
+    <meta name='Keywords' content='WebGl,pythonOCC'>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://x3dom.org/release/x3dom.css" charset="utf-8" ></link>
+    <script type="text/javascript" src="https://x3dom.org/release/x3dom-full.js"></script>
+    <style type="text/css">
+        body {
+            background: linear-gradient(#ced7de, #808080);
+            margin: 0px;
+            overflow: hidden;
+        }
+        #pythonocc_rocks {
+            padding: 5px;
+            position: absolute;
+            left: 1%;
+            bottom: 25%;
+            height: 380px;
+            width: 280px;
+            border-radius: 5px;
+            border: 2px solid #f7941e;
+            opacity: 0.7;
+            font-family: Arial;
+            background-color: #414042;
+            color: #ffffff;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        #commands {
+            padding: 5px;
+            position: absolute;
+            right: 1%;
+            top: 2%;
+            height: 65px;
+            width: 180px;
+            border-radius: 5px;
+            border: 2px solid #f7941e;
+            opacity: 0.7;
+            font-family: Arial;
+            background-color: #414042;
+            color: #ffffff;
+            font-size: 14px;
+            opacity: 0.5;
+        }
+        a {
+            color: #f7941e;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+    <body>
+    <div id="x3d_scene">
+	<x3d id="pythonocc-x3d-scene" style="width:100%;border: none" >
+		<Scene>
+			<Inline onload="fitCamera()" mapDEFToID="true" url="shp35694609.x3d"></Inline>
+		</Scene>
+	</x3d>
+</div>
+    <div id="info">
+        <a href="htpp://www.x3dom.org" target="_blank"> x3dom </a> based renderer
+    </div>
+    <div id="pythonocc_rocks">
+    <b>Open Source Vehicle Documentation</b><hr>
+    <ul>
+     <li>Current Name: ASM0002_ASM</li>
+<li>Previous Name: </li>
+<li>hash:a59e3595baaa9be07e42e14d37a6383d</li>
+<li>Step File: <a href=https://github.com/BootCampOSV/bcosv/tree/master/Doc/mechanics/stp/TABBY_EVO/2_seats/level1/ASM0002_ASM.stp>ASM0002_ASM.stp</a><li>OEM Ref:</li>
+<li>Material:</li>
+<li>Weight:</li>
+<li>Parent:</li>
+<li>Children:</li>
+<li>Neighbors:</li>
+
+        </ul>
+        <a style="font-size:14px;" href=http://www.pythonocc.org> Powered by :  http://www.pythonocc.org</a>
+    </div>
+    <div id="commands">
+    <b>t</b> view/hide shape<br>
+    <b>m</b> transparency/solid<br>
+    <b>a</b> <br>
+    <b>u</b> <br>
+    </div>
+    <script>
+    var selected_target_color = null;
+    var current_selected_shape = null;
+    var current_mat = null;
+    function fitCamera()
+    {            
+        var x3dElem = document.getElementById('pythonocc-x3d-scene');            
+        x3dElem.runtime.fitAll();
+    }
+    function select(the_shape) // called whenever a shape is clicked
+    {
+        // restore color for previous selected shape
+        if (current_mat) {
+            current_mat.diffuseColor = selected_target_color;
+        }
+        // store the shape for future process
+        current_selected_shape = the_shape;
+        console.log(the_shape);
+        // store color, to be restored later
+        appear = current_selected_shape.getElementsByTagName("Appearance")[0];
+        mat = appear.getElementsByTagName("Material")[0];
+        current_mat = mat;
+        console.log(mat);
+        selected_target_color = mat.diffuseColor;
+        mat.diffuseColor = "1, 0.65, 0";
+        //console.log(the_shape.getElementsByTagName("Appearance"));//.getAttribute('diffuseColor'));
+    }
+    function onDocumentKeyPress(event) {
+      event.preventDefault();
+      if (event.key=="t") {  // t key
+         if (current_selected_shape) {
+           if (current_selected_shape.render == "true") {
+              current_selected_shape.render = "false";
+           }
+           else {
+              current_selected_shape.render = "true";
+           }
+         }
+      }
+
+    }
+    // add events
+    document.addEventListener('keypress', onDocumentKeyPress, false);
+    </script>
+    </body>
+    </html>
